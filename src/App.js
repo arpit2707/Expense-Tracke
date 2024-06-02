@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/forms/Login";
 import SignUp from "./components/forms/SignUp";
 import Welcome from "./components/Welcome";
+import Update from "./components/forms/Update";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -18,6 +19,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/welcome" element={<Welcome />} />
+          <Route path="/update" element={<Update />} />
         </Routes>
       </Router>
     </Fragment>

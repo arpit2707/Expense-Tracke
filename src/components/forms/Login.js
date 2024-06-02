@@ -34,7 +34,7 @@ const Login = () => {
         setTimeout(() => {
           localStorage.clear();
           navigate("/login");
-        }, 5000 * 5);
+        }, 50000 * 5);
         navigate("/welcome");
       } else {
         throw new Error(data.error.message);
