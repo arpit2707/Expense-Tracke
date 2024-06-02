@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { firebaseLoginURL, firebaseSignUpURL } from "../store/constants";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const {
@@ -107,6 +107,7 @@ const SignUp = () => {
         <button className="btn btn-primary" type="submit">
           Sign Up
         </button>
+        <Link to="/login">Login to your account</Link>
       </form>
     </div>
   );
