@@ -7,13 +7,16 @@ import Login from "./components/forms/Login";
 import SignUp from "./components/forms/SignUp";
 import Welcome from "./components/Welcome";
 import Update from "./components/forms/Update";
+import Header from "./components/home/Header";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
   return (
-    <Fragment>
-      <Suspense fallback={<div>Loading...</div>} />
-      <Router>
+    <Router>
+      <Fragment>
+        <Header />
+        <Suspense fallback={<div>Loading...</div>} />
+
         <Routes>
           <Route path="/" element={isLogin ? <Home /> : <SignUp />} />
           <Route path="/login" element={<Login />} />
@@ -21,8 +24,8 @@ function App() {
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/update" element={<Update />} />
         </Routes>
-      </Router>
-    </Fragment>
+      </Fragment>
+    </Router>
   );
 }
 

@@ -5,11 +5,16 @@ import axios from "axios";
 
 const Welcome = () => {
   const verify = async () => {
-    const vrification = await axios.post(firebaseEmailVerifyURL, {
-      requestType: "VERIFY_EMAIL",
-      idToken: localStorage.getItem("token"),
-    });
-    console.log(vrification);
+    try {
+      const vrification = await axios.post(firebaseEmailVerifyURL, {
+        requestType: "VERIFY_EMAIL",
+        idToken: localStorage.getItem("token"),
+      });
+      console.log(vrification);
+    } catch (error) {
+      console.log(error);
+      alert(error);
+    }
   };
   return (
     <div className="d-flex justify-content-center flex-column align-items-center">
