@@ -8,6 +8,7 @@ import SignUp from "./components/forms/SignUp";
 import Welcome from "./components/Welcome";
 import Update from "./components/forms/Update";
 import Header from "./components/home/Header";
+import Password from "./components/password/Password";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -23,6 +24,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/update" element={<Update />} />
+          <Route path="/forgot" element={<Password />} />
         </Routes>
       </Fragment>
     </Router>

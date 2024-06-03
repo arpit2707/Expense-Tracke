@@ -76,7 +76,7 @@ const Login = () => {
         </div>
         <div className="d-flex flex-column ">
           <button className="btn btn-primary">Login</button>
-          <Link to="/signup">Forgot Password</Link>
+          <Link to="/forgot">Forgot Password</Link>
           <Link to="/signup">Don't have an account? Signup</Link>
         </div>
       </form>
