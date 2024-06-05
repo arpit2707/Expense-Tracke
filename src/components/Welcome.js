@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { firebaseEmailVerifyURL } from "./store/constants";
 import axios from "axios";
+import ExpenseForm from "./expenses/expenseform";
+import ExpenseList from "./expenses/expenselist";
 
 const Welcome = () => {
   const verify = async () => {
@@ -23,6 +25,7 @@ const Welcome = () => {
       <button className="btn btn-primary" onClick={verify}>
         Verify Email
       </button>
+      <ExpenseForm />
     </div>
   );
 };
