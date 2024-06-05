@@ -12,6 +12,15 @@ const ExpenseList = (props) => {
               <p className="ml-2">Amount: {item.amount}</p>
               <p className="ml-2">Description: {item.description}</p>
               <p className="ml-2">Category: {item.category}</p>
+              <button className="ml-2">Edit</button>
+              <button
+                className="ml-2"
+                onClick={() => {
+                  props.onDeleteEx(key);
+                }}
+              >
+                Delete
+              </button>
             </div>
           </li>
         ))}

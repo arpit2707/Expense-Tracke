@@ -19,6 +19,13 @@ const ExpenseForm = () => {
   useEffect(() => {
     getexpenses();
   }, []);
+  const deleteKey = async (keys) => {
+    console.log("REACHED HERE TO DELETE");
+    const left = await axios.delete(
+      `https://indigo-pod-388318-default-rtdb.firebaseio.com/expenses/${keys}.json`
+    );
+    getexpenses();
+  };
   const [expenses, setExpenses] = useState([]);
   const submit = async (data) => {
     const exep = await axios.post(
@@ -57,7 +64,7 @@ const ExpenseForm = () => {
         </select>
         <button className="btn btn-primary ml-2">Add Expense</button>
       </form>
-      {expenses && <ExpenseList value={expenses} />}
+      {expenses && <ExpenseList value={expenses} onDeleteEx={deleteKey} />}
     </div>
   );
 };
