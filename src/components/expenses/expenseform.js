@@ -1,22 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ExpenseList from "./expenselist";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+
 const ExpenseForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const getexpenses = async () => {
+    const resp = await axios.get(
+      "https://indigo-pod-388318-default-rtdb.firebaseio.com/expenses.json"
+    );
+    setExpenses(resp.data);
+  };
+  useEffect(() => {
+    getexpenses();
+  }, []);
   const [expenses, setExpenses] = useState([]);
-  const submit = (data) => {
-    setExpenses((prevState) => [
-      ...prevState,
+  const submit = async (data) => {
+    const exep = await axios.post(
+      "https://indigo-pod-388318-default-rtdb.firebaseio.com/expenses.json",
       {
         amount: data.amount,
         description: data.description,
         category: data.category,
-      },
-    ]);
+      }
+    );
   };
   return (
     <div

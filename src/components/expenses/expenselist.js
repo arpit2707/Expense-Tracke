@@ -6,7 +6,7 @@ const ExpenseList = (props) => {
     <div>
       <header>All Expenses</header>
       <ul>
-        {props.value.map((item) => (
+        {Object.entries(props.value).map(([key, item]) => (
           <li>
             <div className="d-flex ml-2">
               <p className="ml-2">Amount: {item.amount}</p>
